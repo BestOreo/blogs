@@ -47,3 +47,24 @@
 * 二阶段无法解决的问题：协调者再发出commit消息之后宕机，而唯一接收到这条消息的参与者同时也宕机了。那么即使协调者通过选举协议产生了新的协调者，这条事务的状态也是不确定的，没人知道事务是否被已经提交。
   
  
+## 3阶段提交协议
+
+** 3阶段提交协议可以解决2PC的a)协调者宕机问题 3)阻塞问题  **
+
+<div  align="center">
+<img src="https://4.bp.blogspot.com/-6-k6z8a99fI/WL67I4QKd1I/AAAAAAAALQo/xqHvunysIb4H6mv40q8_FuMlpnFPG3vLwCLcB/s1600/1280px-Three-phase_commit_diagram.svg%255B1%255D.png" width="66%"/>
+  <p>部分节点未同意提交</p>
+</div>
+
+与两阶段提交不同的是，三阶段提交有两个改动点：
+1、引入超时机制。同时在协调者和参与者中都引入超时机制。
+2、在第一阶段和第二阶段中插入一个准备阶段。保证了在最后提交阶段之前各参与节点的状态是一致的。
+
+也就是说，除了引入超时机制之外，3PC把2PC的准备阶段再次一分为二，这样三阶段提交就有CanCommit、PreCommit、DoCommit三个阶段。
+
+### CanCommit阶段
+
+### PreCommit阶段
+
+### DoCommit阶段
+
