@@ -15,10 +15,11 @@
 
 (2) 提交阶段(执行):
 
-在该阶段，写调整将基于第一个阶段的投票结果进行决策: 提交或取消
+如果协调者收到了参与者的失败消息或者超时，直接给每个参与者发送回滚(Rollback)消息；否则，发送提交(Commit)消息；参与者根据协调者的指令执行提交或者回滚操作，释放所有事务处理过程中使用的锁资源。(注意:必须在最后阶段释放锁资源)
 
-当且仅当所有的参与者同意提交事务，协调者才通知所有的参与者提交事务，否则协调者将通知所有的参与者取消事务
+全部节点同意提交。
+<center>![url error](https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/success.png?raw=true)</center>
 
-参与者在接收到协调者发来的消息后将执行响应的操作
+部分节点未同意提交。
+<center>![url error](https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/fail.png?raw=true)</center>
 
- 
