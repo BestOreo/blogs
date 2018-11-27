@@ -23,3 +23,4 @@
 部分节点未同意提交。
 <center> ![img](https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/fail.png)</center>
 
+<center>![img](https://github.com/BestOreo/Pic-for-README.md/blob/master/AIChess/2.png)</center>
