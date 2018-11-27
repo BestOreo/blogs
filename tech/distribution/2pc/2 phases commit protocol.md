@@ -18,15 +18,12 @@
 如果协调者收到了参与者的失败消息或者超时，直接给每个参与者发送回滚(Rollback)消息；否则，发送提交(Commit)消息；参与者根据协调者的指令执行提交或者回滚操作，释放所有事务处理过程中使用的锁资源。(注意:必须在最后阶段释放锁资源)
 
 ##### 全部节点同意提交。
-![img](https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/success.png)
+
+<img src="https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/success.png" width="80%"/>
 
 
 ##### 部分节点未同意提交。
 
-![img](https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/fail.png)
+<img src="https://github.com/BestOreo/blogs/blob/master/tech/distribution/2pc/fail.png" width="80%"/>
 
-
-<div style="align: center">
-<img src="http://upload-images.jianshu.io/upload_images/2182065-91ff11ffeb37cff2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"/>
-</div>
 
