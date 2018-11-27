@@ -49,7 +49,7 @@
  
 ## 3阶段提交协议
 
-** 3阶段提交协议可以解决2PC的a)协调者宕机问题 3)阻塞问题  **
+**3阶段提交协议可以解决2PC的 协调者宕机问题 和 阻塞问题 **
 
 <div  align="center">
 <img src="https://4.bp.blogspot.com/-6-k6z8a99fI/WL67I4QKd1I/AAAAAAAALQo/xqHvunysIb4H6mv40q8_FuMlpnFPG3vLwCLcB/s1600/1280px-Three-phase_commit_diagram.svg%255B1%255D.png" width="66%"/>
@@ -63,6 +63,9 @@
 也就是说，除了引入超时机制之外，3PC把2PC的准备阶段再次一分为二，这样三阶段提交就有CanCommit、PreCommit、DoCommit三个阶段。
 
 ### CanCommit阶段
+
+>1.事务询问 协调者向参与者发送CanCommit请求。询问是否可以执行事务提交操作。然后开始等待参与者的响应。<br>
+2.响应反馈 参与者接到CanCommit请求之后，正常情况下，如果其自身认为可以顺利执行事务，则返回Yes响应，并进入预备状态。否则反馈No
 
 ### PreCommit阶段
 
