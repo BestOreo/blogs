@@ -33,6 +33,11 @@ undo日志用于存放数据修改被修改前的值。假设修改表中 id=2�
 
 
 
+<div  align="center">
+<img src="https://github.com/BestOreo/blogs/blob/master/tech/database/redoundo.png" width="66%"/>
+  <p>部分节点未同意提交</p>
+</div>
+
 
 
 #### redo日志
